@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .MoveTimer {
+            animation: moveTimer 2s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        @keyframes moveTimer {
+            0% {
+                left: auto;
+                right: 0;
+            }
+            100% {
+                left: auto;
+                right: calc(100% - 150px);
+
+            }
+        }
+        
+    
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"></head>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<body id="body" style="background-color: rgb(246, 246, 246); height: 100vh; width: 100%; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center;">
+    <div id="TimerDiv" style=" position: absolute; display: flex; justify-content: center; align-items: center; right: 10px; top: 10px;">
+        <button id="Timer" style="transition: all 1s ease-in-out; font-family: 'Rubik Mono One', sans-serif;font-size: 65px; border: 3px solid red; border-radius: 100%; height: 80px;  aspect-ratio: 1 / 1; background-color: white;">5</button>
+    </div>
+    
+    <div id="FullDiv" style="width: 50%; transition: all 2s ease-in-out; height:60%; background-color: white; display: grid; grid-template-rows: 20% 80%;">
+        <div style="display: flex; justify-content: center; align-items: center; border: solid black 1px;">
+            <p id="TitleOfPage" style="text-align: center; transition: all 1s ease-in-out; font-family: 'Rubik Mono One', sans-serif; font-size: 50px; color: red;">{{album}}</p>
+        </div>
+        <div id="questionArea" style="position: relative; display: flex; justify-content: center; align-items: center; border: solid black 1px;">
+            <p id="QuestionFullPG" style="font-family: 'Roboto', sans-serif; display: block; font-size: 40px;">
+                {{ data["q"][0] }}
+            </p>
+            <div id="FullFourQuestionDiv" style="display: none; height: 100%; width: 100%; justify-content: center; align-items: center;">
+                <div id="Question1" style="transition: all 3s ease-in-out; position: absolute;display: flex; justify-content: center; align-items: center; background-color: #c60929; width: 50%; height: 50%;">
+                    <ul>
+                        <li style="font-size: 35px; font-family: 'Dela Gothic One', sans-serif;">
+                            {{ data["answers"][0][0].replace("-!", "") }}
+                        </li>
+                    </ul>
+                </div>
+                <div id="Question2" style="transition: all 3s ease-in-out;position: absolute;display: flex; justify-content: center; align-items: center; background: #1368ce; width: 50%;  height: 50%;">
+                    <ul>
+                        <li style="font-size: 35px; font-family: 'Dela Gothic One', sans-serif;">
+                            {{ data["answers"][0][1].replace("-!", "")}}
+                        </li>
+                    </ul>
+                </div>
+                <div id="Question3" style="transition: all 3s ease-in-out;position: absolute; display: flex; justify-content: center; align-items: center; background-color: #ffa602; width: 100%; height: 50%;">
+                    <ul>
+                        <li style="font-size: 35px; font-family: 'Dela Gothic One', sans-serif;">
+                            {{ data["answers"][0][2].replace("-!", "")}}
+  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="DataDiv" style="display: none;"> 
+        {% for answer in data["answers"][0] %}
+            {% if "-!" in answer %}
+                {{ loop.index0 }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <script>
+
+
+
+        function StartTimerClock() {
+            let timer = document.getElementById("Timer")
+            let timerTempText = timer.textContent
+            let interval = setInterval(() => {
+            timer.textContent = parseInt(timer.textContent) - 1
+            if (parseInt(timer.textContent) < 1) {
+                if(timerTempText == "9") {
+                    let question = document.getElementById("Question" + document.getElementById("DataDiv").textContent.trim())
+                    document.getElementById("body").innerHTML = question.innerHTML
+
+                    setTimeout(() => {
+                        window.location.href = "/"
+                    }, 5000);
+                }
+                clearInterval(interval)
+                transition()
+            }
+        }, 1000);
+        }
+        StartTimerClock();
+
+
+        function transition() {
+            let questionArea = document.getElementById("questionArea")
+            let titleOfPage = document.getElementById("TitleOfPage")
+            titleOfPage.style.fontSize = 50 + "px"
+            let newTitleOfPageText = document.getElementById("QuestionFullPG").textContent
+            titleOfPage.textContent = newTitleOfPageText
+
+            let Timer = document.getElementById("Timer")
+            let TimerDiv = document.getElementById("TimerDiv")
+            TimerDiv.classList.add("MoveTimer")
+            Timer.style.width = "150px"            
+            Timer.style.height = "150px"
+            let fullDiv = document.getElementById("FullDiv")
+            fullDiv.style.height = "100%"
+            fullDiv.style.width = "100%"
+
+            let QuestionText = document.getElementById("QuestionFullPG")
+
+            QuestionText.style.display = "none"
+
+            let fourQuestionDiv = document.getElementById("FullFourQuestionDiv")
+            fourQuestionDiv.style.display = "flex"
+            let question1 = document.getElementById("Question1")
+            let question2 = document.getElementById("Question2")
+            let question3 = document.getElementById("Question3")
+            question3.style.bottom = "0px"
+            question1.style.top = "0px"
+            question1.style.right = "0px"
+            question2.style.top = "0px"
+            question2.style.left = "0px"
+            console.log(document.getElementById("DataDiv").textContent.trim())
+
+            Timer.textContent = "9"
+            setTimeout(() => {
+                StartTimerClock()
+                
+            }, 500);
+            
+
+    }
+
+
+    </script>
+</body>
+</html>

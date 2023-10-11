@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<style>
+
+      .glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 5s ease-in-out infinite;
+
+}  
+
+      @-webkit-keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 30px #e2c000, 0 0 40px #e2c000, 0 0 50px #e2c000, 0 0 60px #e2c000, 0 0 70px #e2c000;
+}
+  100% {
+    text-shadow: 20px 0 25px #fff, 0 0 30px #e2c000, 0 0 40px #e2c000, 0 0 50px #e2c000, 0 0 60px #e2c000, 0 0 70px #e2c000, 0 0 80px #e2c000;
+    opacity: 1;
+}
+}
+</style>
+</head>
+<body style="background-color: rgb(246, 246, 246); padding: 0; margin: 0;">
+    <div id="FullRulesPage" style=" display: none; justify-content: center; align-items: center; height: 100vh; width: 100%;">
+        <div style="width: 40%; height: 80%; position: relative; background-color: white;">
+            <div style="position: absolute; right: 0; cursor: pointer;">
+                <img src="icons8-x-48.png" onclick="removeRules()" alt="">
+            </div>
+            something else
+        </div>
+    </div>
+    <div id="FullInformationPage" style=" display: none; justify-content: center; align-items: center; height: 100vh; width: 100%;">
+        <div style="width: 40%; height: 80%; position: relative; background-color: white;">
+            <div style="position: absolute; right: 0; cursor: pointer;">
+                <img src="icons8-x-48.png" onclick="removeInformation()" alt="">
+            </div>
+            something
+        </div>
+    </div>
+    <div style="position: absolute; width: 70px; height: 70px; display: flex; justify-content: center; align-items: center; cursor: pointer;"><img onclick="bringRules()" src="icons8-rules-50.png" alt="">
+    </div>
+    <div style="position: absolute; width: 70px; height: 70px; display: flex; justify-content:center; right: 0;  align-items: center; cursor: pointer;"><img onclick="bringInformation()" src="icons8-information-50.png" alt="">
+    </div>
+
+    <div style="position: absolute;  left: 50%;transform: translate(-50%);">
+        <button class="button" style="border: none; background:rgb(246, 246, 246) ;">
+            <p id="trivialText" class="glow" style=" opacity:0;transition: all 1s ease-in-out; font-family: 'Rubik Mono One', sans-serif; font-size: 40px; color: #FFD700;">TRIVIAL PURSUIT</p>
+        </button>
+    </div>
+    <div id="FullMainPage" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <div style="height: 50%; width: 50%; background-color: white; display: grid; grid-template-rows: 50% 50%;">
+            <div style="cursor: pointer; display: grid; grid-template-columns: 25% 25% 25% 25%;">
+                <div style="background-color: turquoise;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Taylorswift"><button type="submit" style="border: none; width: 100%; height: 100%; background-color: turquoise;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Taylor Swift</button></form>
+                </div>
+                <div style="background-color: yellow; display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Fearless"><button type="submit" style="border: none; width: 100%; height: 100%; background-color: yellow;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Fearless</button></form>
+                </div>
+                <div style="background-color: red;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Red"><button type="submit" style="border: none; width: 100%; height: 100%; background-color: red;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Red</button></form>
+                </div>
+                <div style="background-color: purple;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Speaknow"><button type="submit" style="border: none; width: 100%; height: 100%; background-color: purple;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Speak Now</button></form>
+                </div>
+            </div>
+            <div style="cursor: pointer;display: grid; grid-template-columns: 33.33333333333% 33.3333333333333% 33.333333333%;">
+                <div style="background-color: blue;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Midnights"><button style="border: none; width: 100%; height: 100%; background-color: blue;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;" type="submit">Midnights</button></form>
+                </div>
+                <div style="background-color: black;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Reputation"><button type="submit" style="border: none; width: 100%; height: 100%; background-color: black;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Reputation</button></form>
+                </div>
+                <div style="background-color: pink;display: flex; justify-content: center; align-items: center;">
+                    <form action="/a/Lover"><button type="submit"style="border: none; width: 100%; height: 100%; background-color: pink;color: white; font-family: 'Rubik Mono One', sans-serif; font-size: 30px;">Lover</button></form>
+                </div>
+            </div>
+    </div>
+
+
+
+    <script>
+        function bringInformation() {
+            console.log("something")
+            let fullMainPage = document.getElementById("FullMainPage")
+            let fullInformationPage = document.getElementById("FullInformationPage")
+            fullInformationPage.style.display = "flex"
+            fullMainPage.style.display = "none"
+        }
+        function removeInformation() {
+            let fullMainPage = document.getElementById("FullMainPage")
+            let fullInformationPage = document.getElementById("FullInformationPage")
+            fullInformationPage.style.display = "none"
+            fullMainPage.style.display = "flex"
+        }
+        function bringRules() {
+            let fullMainPage = document.getElementById("FullMainPage")
+            let fullRulespage = document.getElementById("FullRulesPage")
+            fullRulespage.style.display = "flex"
+            fullMainPage.style.display = "none"
+        }
+        
+        function removeRules() {
+            let fullMainPage = document.getElementById("FullMainPage")
+            let fullRulespage = document.getElementById("FullRulesPage")
+            fullRulespage.style.display = "none"
+            fullMainPage.style.display = "flex"
+        }
+        setTimeout(() => {
+            let something = document.getElementById("trivialText")
+            something.style.opacity = 1
+        }, 5000);
+    </script>
+</body>
+</html>

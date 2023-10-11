@@ -1,0 +1,68 @@
+a=Taylorswift
+question=1-text=Hvilket firma udgav albummet "Taylor Swift"?
+answer1=Taylor Swift
+answer2=Big Machine Records -!
+answer3=Universal Music Group
+question=2-text=Hvor mange af sangene i hendes album har hun selv skrevet?
+answer1=Alle -!
+answer2=Ingen
+answer3=4
+a=Fearless
+question=1-text=Hvad betyder fearless for Taylor Swift?
+answer1=At være bange -!
+answer2=At være frygt løs
+answer3=At spise en chessburger
+question=2-text=Hvilken af Taylor Swifts sange handler om hendes ven Abigall?
+answer1=Tell Me Why
+answer2=Fiteen -!
+answer3=Fearless
+a=Red
+question=1-text=Hvilket år blev "Red" udgivet?
+answer1=2008 
+answer2=2009
+answer3=2012 -!
+question=2-text=I albummets title sang, hvilken farve er det der mister ham
+answer1=Rød
+answer2=Blå -!
+answer3=Gul
+a=Speaknow
+question=1-text=Fyld det blanke - And I go back to _ all the time
+answer1=Dreaming
+answer2=December -!
+answer3=Septemper
+question=2-text=Hvilken sang har Taylor Swift skrevet om Kanje West
+answer1=Innocent -!
+answer2=Dear John
+answer3=The story of us
+a=Midnights
+question=1-text=Slut teksten - It must be exhausting always rooting for
+answer1=Your ex
+answer2=The villian
+answer3=The anti hero -!
+question=2-text=Sangen handler om at få hævn, hvilken en er det?
+answer1=Anti hero
+answer2=Karma
+answer3=Vigilante Shit -!
+a=Reputation
+question=1-text=Hvilken en af dem her er IKKE en sang på Reputation?
+answer1=End game
+answer2=See Website For Terms And Conditions -!
+answer3=This Is Why We Can't Have Nice Things
+question=2-text=Hvilken af dem de her instrumenter er IKKE blevet brugt i Reputation?
+answer1=Trommer
+answer2=Keyboard
+answer3=Bronze Peruvian water trumpet -!
+a=Lover
+question=1-text=Hvem var ikke en featured kunstner på albummet
+answer1=Todrick Hall -!
+answer2=Dixie Chicks
+answer3=Ingen af dem
+question=2-text=Hvor mange kopier blev der solgt af Lover på første dag?
+answer1=375.000
+answer2=425.000
+answer3=450.000 -!
+
+
+
+
+
